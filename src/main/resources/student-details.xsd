@@ -1,31 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-targetNamespace="http://in28minutes.com/students" 
-xmlns:tns="http://in28minutes.com/students" elementFormDefault="qualified">
-  
-  <xs:element name="GetStudentDetailsRequest">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name= "id" type="xs:int"/>
-      </xs:sequence>  
-    </xs:complexType>
-  </xs:element>
-  
-  <xs:element name="GetStudentDetailsResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name= "StudentDetails" type="tns:StudentDetails"/>
-      </xs:sequence>  
-    </xs:complexType>
-  </xs:element>
-  
-  <xs:complexType name="StudentDetails">
-    <xs:sequence>
-      <xs:element name="id" type="xs:int"/>
-      <xs:element name="name" type="xs:string"/>
-      <xs:element name="passportNumber" type="xs:string"/>
-    </xs:sequence>
-  </xs:complexType>
-  
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://in28minutes.com/students"
+	xmlns:tns="http://in28minutes.com/students" elementFormDefault="qualified">
+
+	<!-- Get Student Details Request and Response  -->
+
+	<xs:element name="GetStudentDetailsRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:int" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="GetStudentDetailsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="StudentDetails" type="tns:StudentDetails" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="StudentDetails">
+		<xs:sequence>
+			<xs:element name="id" type="xs:int" />
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="passportNumber" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- Create Student Details Request and Response  -->
+
+	<xs:element name="CreateStudentDetailsRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:int" />
+				<xs:element name="name" type="xs:string" />
+				<xs:element name="passportNumber" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="CreateStudentDetailsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="StudentCreated" type="tns:StudentCreated" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="StudentCreated">
+		<xs:sequence>
+			<xs:element name="id" type="xs:int" />
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="passportNumber" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<!-- Delete Student Details Request and Response  -->
+
+	<xs:element name="DeleteStudentDetailsRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:int" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DeleteStudentDetailsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="StudentDeleted" type="tns:StudentDeleted" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="StudentDeleted">
+		<xs:sequence>
+			<xs:element name="id" type="xs:int" />
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="passportNumber" type="xs:string" />
+			<xs:element name="status" type="xs:string" />
+
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- Update Student Details Request and Response  -->
+
+	<xs:element name="UpdateStudentDetailsRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:int" />
+				<xs:element name="name" type="xs:string" />
+				<xs:element name="passportNumber" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="UpdateStudentDetailsResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="StudentUpdated" type="tns:StudentUpdated" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="StudentUpdated">
+		<xs:sequence>
+			<xs:element name="id" type="xs:int" />
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="passportNumber" type="xs:string" />
+			<xs:element name="status" type="xs:string" />
+
+		</xs:sequence>
+	</xs:complexType>
+
 </xs:schema>

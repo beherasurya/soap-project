@@ -10,6 +10,7 @@ package com.in28minutes.students;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 
@@ -24,7 +25,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="StudentDeleted" type="{http://in28minutes.com/students}StudentDeleted"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -35,27 +36,36 @@ import jakarta.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "id"
+    "studentDeleted"
 })
-@XmlRootElement(name = "GetStudentDetailsRequest")
-public class GetStudentDetailsRequest {
+@XmlRootElement(name = "DeleteStudentDetailsResponse")
+public class DeleteStudentDetailsResponse {
 
-    protected int id;
+    @XmlElement(name = "StudentDeleted", required = true)
+    protected StudentDeleted studentDeleted;
 
     /**
-     * Gets the value of the id property.
+     * Gets the value of the studentDeleted property.
      * 
+     * @return
+     *     possible object is
+     *     {@link StudentDeleted }
+     *     
      */
-    public int getId() {
-        return id;
+    public StudentDeleted getStudentDeleted() {
+        return studentDeleted;
     }
 
     /**
-     * Sets the value of the id property.
+     * Sets the value of the studentDeleted property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link StudentDeleted }
+     *     
      */
-    public void setId(int value) {
-        this.id = value;
+    public void setStudentDeleted(StudentDeleted value) {
+        this.studentDeleted = value;
     }
 
 }

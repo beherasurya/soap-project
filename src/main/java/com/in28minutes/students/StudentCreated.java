@@ -15,12 +15,12 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for StudentDetails complex type.
+ * <p>Java class for StudentCreated complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="StudentDetails"&gt;
+ * &lt;complexType name="StudentCreated"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
@@ -36,12 +36,12 @@ import jakarta.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "StudentDetails", propOrder = {
+@XmlType(name = "StudentCreated", propOrder = {
     "id",
     "name",
     "passportNumber"
 })
-public class StudentDetails {
+public class StudentCreated {
 
     protected int id;
     @XmlElement(required = true)
